@@ -1,6 +1,6 @@
 # Cheemsificador
 
-## Haganle un cheems, un curicerdo, un ramirez, saquenlo del grupo y vuelvanlo a meter.
+Haganle un cheems, un curicerdo, un ramirez, saquenlo del grupo y vuelvanlo a meter.
 
 
 ## Cheemsificador de imagenes
