@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cheemsificador</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+
+    <h3><a href="./index.html">Volver a inicio</a></h3>
+<body style="background: #F2994A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+    <div id="status" class="d-flex align-items-center">
+        <h4 style="color:#ffffff">Cargando </h4>
+        <div class="spinner-border m-5" role="status">
+           </div>
+      </div>
+      </div>
+
+        <div>
+            <div class="inputoutput">
+                <h3 style="color:#ffffff">Suba una imagen</h3>
+                <img id="imageSrc" alt="" /> 
+                <div class="caption">
+                    <p style="margin-left: 50px;color:#ffffff">Imagen: </p>
+                    <input type="file" id="fileInput" name="file" class="btn btn-outline-light" style="margin-left: 50px;"/>
+                </div>
+                <div style="margin-left: 50px;"><br>
+                    <input style="color:#ffffff" type="radio" id="izquierda" name="angulo" value="izquierda">
+                    <label style="color:#ffffff" for="izquierda">Cabeza mirando hacia la izquierda</label><br>
+                    <input style="color:#ffffff" type="radio" id="derecha" name="angulo" value="derecha">
+                    <label style="color:#ffffff" for="derecha">Cabeza mirando hacia la derecha</label><br>
+                    <input style="color:#ffffff" type="radio" id="frente" name="angulo" value="frente" checked="true">
+                    <label style="color:#ffffff" for="frente">Cabeza mirando hacia al frente</label> 
+                </div>
+                <br><br>
+                <div style="margin-left: 50px;">
+                    <input type="radio" id="izqboca" name="orientacion" value="izqboca">
+                    <label style="color:#ffffff" for="izqboca">Boca mirando hacia la izquierda</label><br>
+                    <input style="color:#ffffff" type="radio" id="derboca" name="orientacion" value="derboca" checked="true">
+                    <label style="color:#ffffff" for="derboca">Boca mirando hacia la derecha</label><br>
+                </div>
+                <br><br>
+                <div style="margin-left: 50px;">
+                    <input type="radio" id="cheems" name="tipotex" value="cheems" checked="true">
+                    <label style="color:#ffffff" for="cheems">Haganle un cheems</label><br>
+                    <input style="color:#ffffff" type="radio" id="ramirez" name="tipotex" value="ramirez">
+                    <label style="color:#ffffff" for="ramirez">Haganle un ramirez</label><br>
+                    <input type="radio" id="curicerdo" name="tipotex" value="curicerdo">
+                    <label style="color:#ffffff" for="curicerdo">Haganle un curicerdo</label><br>
+                </div>
+                <div>
+                    <h3 style="color:#ffffff">Ajustar rango de color (Se recomienda usar los valores predeterminados)</h3><br>
+                    <button id="default" class="btn btn-light btn-lg" style="margin-left: 50px;">Valores predeterminados</button>
+                    <h4 style="color:#ffffff;color:#ffffff">Valores mínimos</h4>
+                    <p style="margin-left: 50px;color:#ffffff">R</p><input type="range" id="minR" name="minR" min=0 max=70 step="0.5" value=0 style="width: 20%; margin-left: 50px;"><br>
+                    <p style="margin-left: 50px;color:#ffffff">G</p><input type="range" id="minG" name="minG" min=103 max=133 step="0.5" value=133 style="width: 20%; margin-left: 50px;"><br>
+                    <br><h4 style="color:#ffffff">Valores maximos</h4>
+                    <p style="color:#ffffff;margin-left: 50px;">B</p><input type="range" id="maxB" name="maxB" min=117 max=157 step="0.5" value=127 style="width: 20%; margin-left: 50px;"><br>
+                </div>
+
+
+
+
+                
+                <h4 style="color:#ffffff">Ajustar posición de la boca (opcional)</h4>
+                <p style="margin-left: 50px;color:#ffffff">Horizontal</p><input type="range" id="rangeX" name="rangeX" min=-200 max=200 step="5" value=0 style="width: 20%; margin-left: 50px;"><br>
+                <p style="margin-left: 50px;color:#ffffff">Vertical</p><input type="range" id="rangeY" name="rangeY" min=-200 max=200 step="5" value=0 style="width: 20%; margin-left: 50px;"><br>
+                
+
+                <h4 style="color:#ffffff">Ajustar tamaño de la boca (opcional)</h4>
+                <input  type="range" id="size" name="size" min=20 max=250 step="5" value=100 style="width: 20%; margin-left: 50px;"><br><br>
+
+                <button id="ok" style="display: none; margin-left: 50px;"class="btn btn-light btn-lg" > Transformar</button>
+            </div>
+            <div class="inputoutput">
+                <canvas id="finalCanvas" style="display: none;" ></canvas>
+                    <h4 style="color:#ffffff">Resultado:</h4>
+                 <img id="finalImage" >
+            </div>
+          </div>
+          
+        
+    </body>
+    
+   
+    <script type="text/javascript" src ="./scripts/base64.js"></script>
+    <script type="text/javascript" src="./scripts/transformador.js"></script>
+    <script async src="https://docs.opencv.org/4.5.1/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+    
+</html>
+
+
+
+
+
