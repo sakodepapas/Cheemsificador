@@ -2,7 +2,6 @@
 
 ## Haganle un cheems, un curicerdo, un ramirez, saquenlo del grupo y vuelvanlo a meter.
 
-Creado utilizando la librería de OpenCV para la detección de color de la piel
 
 ## Cheemsificador de imagenes
 
